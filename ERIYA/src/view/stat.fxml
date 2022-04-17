@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControlStat">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblloginid" layoutX="44.0" layoutY="83.0" prefHeight="30.0" prefWidth="180.0" text="0000님" textAlignment="CENTER" textFill="WHITE" />
+            <Label fx:id="lblback" alignment="CENTER" layoutX="336.0" layoutY="14.0" onMouseClicked="#back" prefHeight="30.0" prefWidth="50.0" text="뒤로가기" textAlignment="CENTER" textFill="WHITE" />
+            <BarChart fx:id="chartday" layoutX="25.0" layoutY="202.0" prefHeight="174.0" prefWidth="351.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <BarChart fx:id="chartweek" layoutX="25.0" layoutY="384.0" prefHeight="174.0" prefWidth="351.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+            <Label fx:id="lblsell" layoutX="69.0" layoutY="165.0" text="가장 많이 팔린 음료 :" textFill="WHITE" />
+            <Label layoutX="69.0" layoutY="361.0" text="일별 매출" textFill="WHITE" />
+            <Label layoutX="69.0" layoutY="543.0" text="주간 매출" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
