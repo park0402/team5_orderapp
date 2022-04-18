@@ -103,8 +103,8 @@ public class Home implements Initializable{
     }
 
     @FXML
-    void money(ActionEvent event) {
-
+    void money(ActionEvent event) { // Ελ°θ
+    	loadpage("/view/stat.fxml");
     }
 
     @FXML

@@ -4,9 +4,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import controller.home.Home;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
@@ -14,11 +18,12 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 public class ControlStat implements Initializable{
 	
 	 @FXML
-	    private BorderPane borderpane;
+	    private Pane pane;
 
 	    @FXML
 	    private Label lblloginid;
@@ -68,28 +73,39 @@ public class ControlStat implements Initializable{
 						m=i;
 					}
 				}
-				lblsell.setText("가장 많이 팔린 음료 : "); // dto.food에서 m 번호의 음료 이름 호출
+				lblsell.setText("가장 많이 팔린 음료 : "+m); // dto.food에서 m 번호의 음료 이름 호출
 				
 		//일별 매출
-			XYChart.Series series = new XYChart.Series<>(); //xy축 계열 생성
-			
+				XYChart.Series series = new XYChart.Series<>();
+				try {
 				//데이터 가져오기
 					for(int i=0; i<sp1.length; i++) {
-					String[] j = sp1[i].split(",");
+					String[] j = sp1[i].split(","); // 데이터 분할 0: 구매자 1: 음료번호 2: 가격 3: 날짜
 					String[] J;
 					int c = Integer.parseInt(j[2]); // 매출값 넣기
-					if(i-1>=0) {J = sp1[i-1].split(","); //이전 매출값 선언
 					for(int q=i; q>=0; q--) {
-						if(j[3].equals(J[3]) && (i-1)>=0) { // 이전 매출이랑 날짜 같으면
-							c+=Integer.parseInt(J[2]); // 다음 매출값 더해주기
-						} //if2 e
+						if((i-1)>=0 && q>0) { // 이전 매출이랑 날짜 같으면
+							J = sp1[q-1].split(","); //비교할 매출값 선언
+							if(j[3].equals(J[3])) { //비교할 매출값이랑 날짜 같으면
+							c+=Integer.parseInt(J[2]); // 이전 매출값 더해주기 반복
+							}
+						} //if e
 					} //for2 e
-				} // if e
-					XYChart.Data data = new XYChart.Data<>( j[3] , c );	//매출값 넣기
-					series.getData().add(data); // 계열에 데이터 객체 추가
+					 series.setName("테스트");
+					 series.setData(FXCollections.observableArrayList(
+							 new XYChart.Data(j[3],c)));
+					 System.out.println(series.getData().get(0));
+						Map<String, Integer> map = new HashMap<String, Integer>();
+						map.put(j[3], c);
+						for(String key : map.keySet()) {
+							XYChart.Data data = new XYChart.Data<>(key, map.get(key));
+							series.getData().add(data);
+						}
+//					 XYChart.Data data = new XYChart.Data<>( j[3] , c );	//매출값 넣기
+//						series.getData().add(data);// 계열에 데이터 객체 추가
 			} // for e
-			
-		chartday.getData().add(series); // 데이터 막대차트에 추가
+					chartday.getData().add(series); // 데이터 막대차트에 추가
+				}catch(Exception e) {System.out.println(e);}
 		//주간 매출
 	} // initialize e
 }
