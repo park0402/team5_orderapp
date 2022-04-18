@@ -110,8 +110,8 @@ public class Home implements Initializable{
 
     @FXML
     void money(ActionEvent event) {
-    	System.out.println("주문 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/home/money.fxml");
+    	System.out.println("매출 버튼을 눌렀습니다.");
+		Main.instance.loadpage("/view/stat.fxml");
     }
 
    
