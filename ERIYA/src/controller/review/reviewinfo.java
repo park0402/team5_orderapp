@@ -1,4 +1,4 @@
-package controller.home;
+package controller.review;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
-public class Review implements Initializable{
+public class reviewinfo implements Initializable{
 
 	@FXML
 	private BorderPane borderpane;
