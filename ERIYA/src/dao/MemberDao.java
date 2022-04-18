@@ -35,7 +35,7 @@ public class MemberDao {
 
 	public boolean idcheck(String id) { // 아이디 중복 확인
 		try {
-			String sql = "select *from eriya.member where mid=?";
+			String sql = "select *from cafe.member where mid=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			rs = ps.executeQuery();
@@ -50,7 +50,7 @@ public class MemberDao {
 	
 	public boolean signup(Member member) { // 회원가입
 		try {
-			String sql = "insert into eriya.member(mid, mpw, mname, mphone, memail) values(?,?,?,?,?)";
+			String sql = "insert into cafe.member(mid, mpw, mname, mphone, memail) values(?,?,?,?,?)";
 			
 			ps = con.prepareStatement(sql);
 			ps.setString(1, member.getMid());
@@ -70,7 +70,7 @@ public class MemberDao {
 	public boolean login(String id, String pw) { // 로그인
 		try {
 			// sql 작성
-			String sql = "select *from eriya.member where mid=? and mpw=?";			
+			String sql = "select *from cafe.member where mid=? and mpw=?";			
 			// sql 조작
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
@@ -89,7 +89,7 @@ public class MemberDao {
 	
 	public String findid(String email) { // 아이디 찾기
 		try {
-			String sql = "select *From eriya.member where memail=?";
+			String sql = "select *From cafe.member where memail=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, email);
 			rs = ps.executeQuery();
@@ -107,7 +107,7 @@ public class MemberDao {
 	
 	public String findpw(String id, String email) { // 비밀번호 찾기
 		try {
-			String sql = "select *From eriya.member where mid=? and memail=?";
+			String sql = "select *From cafe.member where mid=? and memail=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, email);
@@ -125,7 +125,7 @@ public class MemberDao {
 	
 	public Member getmember(String id) {
 		try {
-			String sql = "select *from eriya.member where mid=?";
+			String sql = "select *from cafe.member where mid=?";
 			
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
@@ -149,7 +149,7 @@ public class MemberDao {
 	
 	public boolean delete(int mnum) {
 		try {
-			String sql = "delete from eriya.member where mnum=?";
+			String sql = "delete from cafe.member where mnum=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, mnum);
 			ps.executeLargeUpdate(); // insert, update, delete 실행
