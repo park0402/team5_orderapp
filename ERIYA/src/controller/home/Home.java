@@ -124,7 +124,7 @@ public class Home implements Initializable{
     @FXML
     void review(ActionEvent event) {
     	System.out.println("¸®ºä ¹öÆ°À» ´­·¶½À´Ï´Ù.");
-    	Main.instance.loadpage("/view/home/review.fxml");
+    	Main.instance.loadpage("/view/review/reviewinfo.fxml");
     }
 	
 }
