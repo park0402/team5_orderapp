@@ -105,7 +105,7 @@ public class ControlStat implements Initializable{
 //						series.getData().add(data);// 계열에 데이터 객체 추가
 			} // for e
 					chartday.getData().add(series); // 데이터 막대차트에 추가
-				}catch(Exception e) {System.out.println(e);}
+				}catch(Exception e) {System.out.println("일별 매출 오류 "+e);}
 		//주간 매출
 	} // initialize e
 }
