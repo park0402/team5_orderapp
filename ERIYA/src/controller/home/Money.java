@@ -12,6 +12,10 @@ import javafx.scene.layout.BorderPane;
 
 public class Money implements Initializable{
 
+ 
+    @FXML
+    private Label lblsell;
+	
 	@FXML
 	private BorderPane borderpane;
 

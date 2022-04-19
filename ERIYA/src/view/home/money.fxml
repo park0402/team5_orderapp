@@ -12,7 +12,7 @@
       <AnchorPane prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="lblback" layoutX="292.0" layoutY="45.0" onMouseClicked="#back" prefHeight="36.0" prefWidth="88.0" text="뒤로가기" />
-            <BarChart layoutX="75.0" layoutY="98.0" prefHeight="212.0" prefWidth="232.0">
+            <BarChart layoutX="29.0" layoutY="176.0" prefHeight="150.0" prefWidth="341.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -20,7 +20,8 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
-            <BarChart layoutX="84.0" layoutY="339.0" prefHeight="212.0" prefWidth="232.0">
+            <Label fx:id="lblsell" layoutX="63.0" layoutY="141.0" prefHeight="15.0" prefWidth="134.0" text="가장 많이 팔린 음료 : " />
+            <BarChart layoutX="30.0" layoutY="383.0" prefHeight="150.0" prefWidth="341.0">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
@@ -28,6 +29,8 @@
                   <NumberAxis side="LEFT" />
                </yAxis>
             </BarChart>
+            <Label layoutX="55.0" layoutY="333.0" text="일별 매출" />
+            <Label layoutX="55.0" layoutY="533.0" text="주간 매출" />
          </children>
       </AnchorPane>
    </center>

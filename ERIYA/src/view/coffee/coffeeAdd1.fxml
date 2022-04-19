@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coffee.coffeeAdd">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+           		 <image>
+                  <Image url="@../../img/이리야2.png" />
+          		</image>
+     		 </ImageView>
+            <Label fx:id="lblback" layoutX="328.0" layoutY="14.0" onMouseClicked="#back" prefHeight="28.0" prefWidth="61.0" text="뒤로가기" textFill="WHITE" />
+            <Button fx:id="btnadd" layoutX="200.0" layoutY="536.0" mnemonicParsing="false" onAction="#add" text="메뉴추가" />
+            <Button fx:id="btncancel" layoutX="283.0" layoutY="536.0" mnemonicParsing="false" onAction="#cancel" text="취소" />
+            <TextField fx:id="txtname" layoutX="80.0" layoutY="239.0" text="제품명 입력" />
+            <TextField fx:id="txtcontent" layoutX="80.0" layoutY="277.0" text="제품 설명 입력" />
+            <TextField fx:id="txtprice" layoutX="80.0" layoutY="319.0" text="제품 가격 입력" />
+            <Button fx:id="btnimgadd" layoutX="80.0" layoutY="363.0" mnemonicParsing="false" onAction="#imgadd" text="제품 사진 등록" />
+            <Label layoutX="85.0" layoutY="397.0" text="미리보기" />
+            <ImageView fx:id="preview" fitHeight="150.0" fitWidth="150.0" layoutX="203.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" />
+ 
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

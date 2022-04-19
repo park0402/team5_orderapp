@@ -105,7 +105,7 @@ public class Home implements Initializable{
     @FXML
     void food(ActionEvent event) {
     	System.out.println("제품관리를 눌렀습니다.");
-		Main.instance.loadpage("/view/home/food.fxml");
+		Main.instance.loadpage("/view/coffee/coffeeList.fxml");
     }
 
     @FXML
