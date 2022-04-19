@@ -1,7 +1,6 @@
 package dto;
 
 public class Food {
-	String ordertime;
 	int fnum;
 	int fprice;
 	String fimg;
@@ -18,9 +17,9 @@ public class Food {
 
 
 
-	public Food(String ordertime, int fnum, int fprice, String fimg, String fcontent, String fname) {
+	public Food( int fnum, int fprice, String fimg, String fcontent, String fname) {
 		super();
-		this.ordertime = ordertime;
+		
 		this.fnum = fnum;
 		this.fprice = fprice;
 		this.fimg = fimg;
@@ -28,19 +27,6 @@ public class Food {
 		this.fname = fname;
 	}
 
-
-
-
-	public String getOrdertime() {
-		return ordertime;
-	}
-
-
-
-
-	public void setOrdertime(String ordertime) {
-		this.ordertime = ordertime;
-	}
 
 
 
