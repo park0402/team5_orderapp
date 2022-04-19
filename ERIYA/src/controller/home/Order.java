@@ -15,7 +15,10 @@ import javafx.scene.layout.BorderPane;
 public class Order implements Initializable{
 
 	 @FXML
-	   private BorderPane borderpane;
+	 private BorderPane borderpane;
+
+	    @FXML
+	    private Label lblcart;
 
     @FXML
     private Label lblback;
@@ -26,6 +29,11 @@ public class Order implements Initializable{
 		Main.instance.loadpage("/view/home/home.fxml");
     }
     
+    @FXML
+    void cart(MouseEvent event) {
+    	System.out.println("장바구니 버튼을 눌렀습니다.");
+		Main.instance.loadpage("/view/cart/cart.fxml");
+    }
     public void loadpage(String page) {
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource(page));
