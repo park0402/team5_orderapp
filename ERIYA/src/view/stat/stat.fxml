@@ -12,7 +12,7 @@
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="lblback" layoutX="292.0" layoutY="45.0" onMouseClicked="#back" prefHeight="36.0" prefWidth="88.0" text="뒤로가기" textFill="WHITE" />
-            <BarChart layoutX="29.0" layoutY="176.0" prefHeight="150.0" prefWidth="341.0">
+            <BarChart fx:id="chartday" layoutX="29.0" layoutY="176.0" prefHeight="150.0" prefWidth="341.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -21,7 +21,7 @@
               </yAxis>
             </BarChart>
             <Label fx:id="lblsell" layoutX="63.0" layoutY="141.0" prefHeight="15.0" prefWidth="134.0" text="가장 많이 팔린 음료 : " textFill="WHITE" />
-            <BarChart layoutX="30.0" layoutY="383.0" prefHeight="150.0" prefWidth="341.0">
+            <BarChart fx:id="chartweek" layoutX="30.0" layoutY="383.0" prefHeight="150.0" prefWidth="341.0">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>

@@ -7,9 +7,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.Main;
+import controller.home.Home;
+import dao.FoodDao;
+import dto.Food;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -52,19 +59,30 @@ public class coffeeAdd implements Initializable{
     @FXML
     private ImageView preview;
 
-	    @FXML
-	    void add(ActionEvent event) {
-	    	String cName = txtname.getText(); String cCon=txtcontent.getText();
-	    	int cPrice = Integer.parseInt(txtprice.getText()); // 입력값 가져오기
-	    	//객체화(dto 작성 후)
-	    	
-	    	//DB처리(dao 작성 후)
-	    }
-	    
-	    private String pimg=null;
+    @FXML
+    void add(ActionEvent event) { // 제품 등록시
+    	String cName = txtname.getText(); String cCon=txtcontent.getText();
+    	int cPrice = Integer.parseInt(txtprice.getText()); // 입력값 가져오기
+    	//객체화(dto 작성 후)
+    	Food food = new Food(0, cPrice, pimg, cCon, cName);
+    	//DB처리(dao 작성 후)
+    	boolean result = FoodDao.foodDao.add(food);
+    	//결과처리
+    	if(result) {
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setHeaderText("제품 등록 완료");
+    		alert.showAndWait();
+    		loadpage("/view/coffee/coffeeList.fxml");
+    	}else {
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setHeaderText("제품 등록 실패");
+    		alert.showAndWait();
+    	}
+    }
+    private String pimg=null; // 메소드 밖에서 선언
 
 	    @FXML
-	    void imgadd(ActionEvent event) {
+	    void imgadd(ActionEvent event) { // 이미지추가시
 	    	FileChooser fileChooser = new FileChooser(); // 파일 선택 클래스 선언
 	    	fileChooser.getExtensionFilters().add(  // 파일 필터 설정
     				new ExtensionFilter("이미지파일:image file" , "*png" , "*jpeg" , "*jpg","*gif", "*png") );
@@ -104,4 +122,12 @@ public class coffeeAdd implements Initializable{
 	    
 	    
 	    }
+	    public void loadpage(String page) {
+			try {
+				Parent parent = FXMLLoader.load(getClass().getResource(page));
+				borderpane.setCenter(parent);
+			} catch (Exception e) {
+				System.out.println("Load 오류 : " + e);
+			}
+		}
 }
