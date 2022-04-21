@@ -99,7 +99,7 @@ public class Home implements Initializable{
 	 @FXML
 	    public void order(ActionEvent event) {
 	    	System.out.println("주문 버튼을 눌렀습니다.");
-			Main.instance.loadpage("/view/home/order.fxml");
+			Main.instance.loadpage("/view/order/order.fxml");
 	    }
 
     @FXML
@@ -111,20 +111,20 @@ public class Home implements Initializable{
     @FXML
     void money(ActionEvent event) {
     	System.out.println("매출 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/home/money.fxml");
+		Main.instance.loadpage("/view/stat/stat.fxml");
     }
 
    
     @FXML
     void orderlist(ActionEvent event) {
     	System.out.println("주문 내역 버튼을 눌렀습니다.");
-    	Main.instance.loadpage("/view/home/orderlist.fxml");
+    	Main.instance.loadpage("/view/order/orderlist.fxml");
     }
 
     @FXML
     void review(ActionEvent event) {
     	System.out.println("리뷰 버튼을 눌렀습니다.");
-    	Main.instance.loadpage("/view/home/review.fxml");
+    	Main.instance.loadpage("/view/review/review.fxml");
     }
 	
 }

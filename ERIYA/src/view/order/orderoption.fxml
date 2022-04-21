@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.home.Order">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.order.Orderoption">
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
@@ -45,11 +45,11 @@
             </Label>
             <RadioButton layoutX="213.0" layoutY="416.0" mnemonicParsing="false" text="초콜렛 칩" />
             <RadioButton layoutX="213.0" layoutY="449.0" mnemonicParsing="false" text="시럽" />
-            <Button layoutX="36.0" layoutY="519.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="주문하기" />
+            <Button fx:id="btncart" layoutX="36.0" layoutY="519.0" mnemonicParsing="false" onAction="#cart" prefHeight="50.0" prefWidth="150.0" text="장바구니" />
             <Line endX="240.0" layoutX="133.0" layoutY="367.0" startX="-100.0" />
             <Line endX="240.0" layoutX="133.0" layoutY="313.0" startX="-100.0" />
-            <Button layoutX="214.0" layoutY="519.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="장바구니" />
-            <Label layoutX="255.0" layoutY="25.0" text="장바구니" />
+            <Button fx:id="cancel" layoutX="214.0" layoutY="519.0" mnemonicParsing="false" onAction="#cancel" prefHeight="50.0" prefWidth="150.0" text="취소" />
+            <Label fx:id="cart" layoutX="255.0" layoutY="25.0" onMouseClicked="#cart" text="장바구니" />
          </children>
       </AnchorPane>
    </center>

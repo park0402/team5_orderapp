@@ -1,4 +1,4 @@
-package controller.home;
+package controller.order;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,12 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
-public class Money implements Initializable{
+public class Orderlist implements Initializable{
 
- 
-    @FXML
-    private Label lblsell;
-	
 	@FXML
 	private BorderPane borderpane;
 

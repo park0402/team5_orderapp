@@ -17,7 +17,16 @@ public class Review implements Initializable{
 
 	@FXML
 	private Label lblback;
+	
+	   @FXML
+	    private Label lblreview;
 
+	    @FXML
+	    void review(MouseEvent event) {
+	    	System.out.println("리뷰작성 버튼을 눌렀습니다.");
+			Main.instance.loadpage("/view/review/reviewadd.fxml");
+	    }
+	
 	@FXML
 	void back(MouseEvent event) {
 		System.out.println("뒤로가기 버튼을 눌렀습니다.");

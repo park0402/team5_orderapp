@@ -1,4 +1,4 @@
-package controller.home;
+package controller.order;
 
 import java.net.URL;
 import java.util.ResourceBundle;
