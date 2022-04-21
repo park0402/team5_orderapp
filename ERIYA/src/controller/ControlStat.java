@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 
 import controller.home.Home;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
@@ -77,6 +78,7 @@ public class ControlStat implements Initializable{
 				
 		//일별 매출
 				XYChart.Series series = new XYChart.Series<>();
+				ObservableList<XYChart.Series<String, Integer>> list = FXCollections.observableArrayList();
 				//데이터 가져오기
 					for(int i=0; i<sp1.length; i++) {
 					String[] j = sp1[i].split(","); // 데이터 분할 0: 구매자 1: 음료번호 2: 가격 3: 날짜
@@ -94,15 +96,14 @@ public class ControlStat implements Initializable{
 					
 					//데이터를 차트에 넣기
 					 series.setName("테스트");
-					 series.setData(FXCollections.observableArrayList(
-							 new XYChart.Data(j[3],c)));
-					 System.out.println(series.getData().get(0));
-						Map<String, Integer> map = new HashMap<String, Integer>();
-						map.put(j[3], c);
-						for(String key : map.keySet()) {
-							XYChart.Data data = new XYChart.Data<>(key, map.get(key));
-							series.getData().add(data);
-						}
+					 series.getData().add(new XYChart.Data(j[3],c));
+					 System.out.println(series.getData().get(i));
+//						Map<String, Integer> map = new HashMap<String, Integer>();
+//						map.put(j[3], c);
+//						for(String key : map.keySet()) {
+//							XYChart.Data data = new XYChart.Data<>(key, map.get(key));
+//							series.getData().add(data);
+//						}
 //					 XYChart.Data data = new XYChart.Data<>( j[3] , c );	//매출값 넣기
 //						series.getData().add(data);// 계열에 데이터 객체 추가
 					//주간 매출
@@ -110,7 +111,6 @@ public class ControlStat implements Initializable{
 					ca=Calendar.getInstance(); sdf = new SimpleDateFormat("yyyy-MM-dd");
 					date = sdf.parse(j[3]);
 					ca.setTime(date);
-					System.out.println(ca.get(Calendar.WEEK_OF_MONTH));
 					int s=Integer.parseInt(j[2]); // 매출값 넣기
 					for(int q=i; q>=0; q--) { // i를 기준으로 이전것들 비교 반복
 						if((i-1)>=0 && q>0) { // null 참조 안하게 조건 선언
@@ -127,6 +127,9 @@ public class ControlStat implements Initializable{
 			} // for e
 					//chartday.getData().add(series); // 데이터 막대차트에 추가
 					//chartweek.getData().add(week);
+					list.addAll(series);
+					System.out.println("데이터 확인 : "+list.get(0).getData().get(0).getXValue());
+					//chartday.setData(list);
 			} catch (Exception e) {
 				e.printStackTrace();
 		}

@@ -4,9 +4,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coffee.CoffeeAdd">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coffee.coffeeList">
    <children>
       <Button fx:id="btnadd" layoutX="308.0" layoutY="27.0" mnemonicParsing="false" onAction="#add" text="메뉴 추가" />
       <Label layoutX="27.0" layoutY="23.0" text="메뉴 목록">
@@ -14,6 +15,9 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="37.0" layoutY="88.0" prefHeight="459.0" prefWidth="339.0" />
+      <ScrollPane fx:id="scrollpane" layoutX="37.0" layoutY="88.0" prefHeight="459.0" prefWidth="339.0">
+         <content>
+            <VBox fx:id="vbox" prefHeight="457.0" prefWidth="337.0" />
+         </content></ScrollPane>
    </children>
 </Pane>
