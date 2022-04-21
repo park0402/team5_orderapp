@@ -11,7 +11,7 @@
       <Label fx:id="lblback" layoutX="318.0" layoutY="31.0" text="뒤로가기" textFill="WHITE" />
       <Label fx:id="lblloginid" layoutX="61.0" layoutY="66.0" text="로그인id" textFill="WHITE" />
       <Label fx:id="lblsell" layoutX="61.0" layoutY="136.0" text="가장 많이 팔린 음료 :" textFill="WHITE" />
-      <BarChart layoutY="167.0" prefHeight="178.0" prefWidth="400.0">
+      <BarChart fx:id="chartday" layoutY="167.0" prefHeight="178.0" prefWidth="400.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -19,7 +19,7 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <BarChart layoutY="359.0" prefHeight="178.0" prefWidth="400.0">
+      <BarChart fx:id="chartweek" layoutY="359.0" prefHeight="178.0" prefWidth="400.0">
          <xAxis>
             <CategoryAxis side="BOTTOM" />
          </xAxis>

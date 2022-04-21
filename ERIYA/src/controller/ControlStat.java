@@ -78,7 +78,7 @@ public class ControlStat implements Initializable{
 				
 		//일별 매출
 				XYChart.Series series = new XYChart.Series<>();
-				ObservableList<XYChart.Series<String, Integer>> list = FXCollections.observableArrayList();
+//				ObservableList<XYChart.Series<String, Integer>> list = FXCollections.observableArrayList();
 				//데이터 가져오기
 					for(int i=0; i<sp1.length; i++) {
 					String[] j = sp1[i].split(","); // 데이터 분할 0: 구매자 1: 음료번호 2: 가격 3: 날짜
@@ -96,8 +96,9 @@ public class ControlStat implements Initializable{
 					
 					//데이터를 차트에 넣기
 					 series.setName("테스트");
-					 series.getData().add(new XYChart.Data(j[3],c));
-					 System.out.println(series.getData().get(i));
+					 System.out.println( "테스트 날짜 : " +  j[3] +"   가격:    " + c);
+					 series.getData().add(  new XYChart.Data(   j[3]    ,c));
+					 System.out.println(series.getData().get(i) );
 //						Map<String, Integer> map = new HashMap<String, Integer>();
 //						map.put(j[3], c);
 //						for(String key : map.keySet()) {
@@ -127,9 +128,14 @@ public class ControlStat implements Initializable{
 			} // for e
 					//chartday.getData().add(series); // 데이터 막대차트에 추가
 					//chartweek.getData().add(week);
-					list.addAll(series);
-					System.out.println("데이터 확인 : "+list.get(0).getData().get(0).getXValue());
-					//chartday.setData(list);
+//					list.addAll(series);
+//					System.out.println("데이터 확인 : "+list.get(0).getData().get(0).getXValue());
+//					System.out.println("asdasdas:" +list.toString() );
+//					chartday.setData(list);
+//					XYChart.Series series2 = new XYChart.Series<>();
+//					XYChart.Data data = new XYChart.Data<>( 1 , 2  );
+//					series2.getData().add(data);
+					chartday.getData().add(series);
 			} catch (Exception e) {
 				e.printStackTrace();
 		}

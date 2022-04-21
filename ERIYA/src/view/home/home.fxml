@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.home.Home">
-   <left>
+   <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="lblloginid" layoutX="44.0" layoutY="83.0" prefHeight="30.0" prefWidth="180.0" text="0000님" textAlignment="CENTER" textFill="WHITE" />
@@ -19,5 +19,5 @@
             <Button fx:id="btnfood" layoutX="212.0" layoutY="378.0" mnemonicParsing="false" onAction="#food" prefHeight="105.0" prefWidth="85.0" text="제품관리" />
          </children>
       </AnchorPane>
-   </left>
+   </center>
 </BorderPane>
