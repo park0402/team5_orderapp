@@ -13,9 +13,9 @@
             <Label fx:id="lblback" layoutX="292.0" layoutY="45.0" onMouseClicked="#back" prefHeight="36.0" prefWidth="88.0" text="뒤로가기" textFill="WHITE" />
             <TableView layoutX="31.0" layoutY="126.0" prefHeight="421.0" prefWidth="338.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="날짜" />
-                <TableColumn prefWidth="122.0" text="닉네임" />
-                  <TableColumn prefWidth="140.0" text="제품명" />
+                <TableColumn prefWidth="54.0" text="날짜" />
+                <TableColumn prefWidth="99.0" text="아이디" />
+                  <TableColumn prefWidth="184.0" text="제품명" />
               </columns>
             </TableView>
             <Label fx:id="lblreview" layoutX="200.0" layoutY="56.0" onMouseClicked="#review" text="리뷰쓰기" textFill="WHITE" />
