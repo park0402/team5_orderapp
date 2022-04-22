@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.pay.Pay">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+           		 <image>
+                  <Image url="@../../img/이리야2.png" />
+          		</image>
+     		 </ImageView>
+            <Label fx:id="lblback" layoutX="328.0" layoutY="14.0" onMouseClicked="#back" prefHeight="28.0" prefWidth="61.0" text="뒤로가기" textFill="WHITE" />
+            <Label layoutX="111.0" layoutY="251.0" prefHeight="15.0" prefWidth="179.0" text="총 결제금액 :" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="55.0" layoutY="494.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="135.0" text="결제하기" />
+            <Button fx:id="backpage" layoutX="213.0" layoutY="494.0" mnemonicParsing="false" onAction="#backpage" prefHeight="63.0" prefWidth="135.0" text="취소" />
+            <TextField layoutX="100.0" layoutY="300.0" prefHeight="61.0" prefWidth="142.0" promptText="결제 금액 입력" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -26,7 +26,7 @@ public class MemberDao {
 		try {
 		// DB연동
 			Class.forName("com.mysql.cj.jdbc.Driver");	// 1. DB 드라이버 가져오기
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafe?serverTimezone=UTC",
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx?serverTimezone=UTC",
 					"root", "1234"); // 2. DB 주소 연결		
 		}catch (Exception e) {
 			System.out.println("DB 연동 오류" + e);
@@ -89,7 +89,7 @@ public class MemberDao {
 	
 	public String findid(String email) { // 아이디 찾기
 		try {
-			String sql = "select *from cafe.member where memail=?";
+			String sql = "select *From cafe.member where memail=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, email);
 			rs = ps.executeQuery();
@@ -107,7 +107,7 @@ public class MemberDao {
 	
 	public String findpw(String id, String email) { // 비밀번호 찾기
 		try {
-			String sql = "select *from cafe.member where mid=? and memail=?";
+			String sql = "select *From cafe.member where mid=? and memail=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, email);

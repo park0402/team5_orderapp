@@ -3,21 +3,30 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coffee.coffeeList">
-   <children>
-      <Button fx:id="btnadd" layoutX="308.0" layoutY="27.0" mnemonicParsing="false" onAction="#add" text="메뉴 추가" />
-      <Label layoutX="27.0" layoutY="23.0" text="메뉴 목록">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <ScrollPane fx:id="scrollpane" layoutX="37.0" layoutY="88.0" prefHeight="459.0" prefWidth="339.0">
-         <content>
-            <VBox fx:id="vbox" prefHeight="457.0" prefWidth="337.0" />
-         </content></ScrollPane>
-   </children>
-</Pane>
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coffee.coffeeList">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+           		 <image>
+                  <Image url="@../../img/이리야2.png" />
+          		</image>
+     		 </ImageView>
+            <Label fx:id="lblback" layoutX="328.0" layoutY="14.0" onMouseClicked="#back" prefHeight="28.0" prefWidth="61.0" text="뒤로가기" textFill="WHITE" />
+            <Button fx:id="btnaddlist" layoutX="296.0" layoutY="214.0" mnemonicParsing="false" onAction="#addlist" text="메뉴추가" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="326.0" />
+            <ScrollPane fx:id="scrollpane" layoutX="37.0" layoutY="259.0" prefHeight="327.0" prefWidth="327.0">
+               <content>
+                  <VBox fx:id="vbox" prefHeight="324.0" prefWidth="326.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

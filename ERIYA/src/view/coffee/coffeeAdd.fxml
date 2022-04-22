@@ -3,25 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coffee.coffeeAdd">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+           		 <image>
+                  <Image url="@../../img/이리야2.png" />
+          		</image>
+     		 </ImageView>
+            <Label fx:id="lblback" layoutX="328.0" layoutY="14.0" onMouseClicked="#back" prefHeight="28.0" prefWidth="61.0" text="뒤로가기" textFill="WHITE" />
+            <Button fx:id="btnadd" layoutX="215.0" layoutY="531.0" mnemonicParsing="false" onAction="#add" text="메뉴추가" />
+            <Button fx:id="btncancel" layoutX="312.0" layoutY="531.0" mnemonicParsing="false" onAction="#cancel" text="취소" />
+            <TextField fx:id="txtname" layoutX="46.0" layoutY="228.0" promptText="제품명 입력" />
+            <TextField fx:id="txtcontent" layoutX="46.0" layoutY="264.0" promptText="제품 설명 입력" />
+            <TextField fx:id="txtprice" layoutX="46.0" layoutY="300.0" promptText="제품 가격 입력" />
+            <Button fx:id="btnimgadd" layoutX="46.0" layoutY="342.0" mnemonicParsing="false" onAction="#imgadd" prefHeight="23.0" prefWidth="108.0" text="제품 사진 등록" />
+            <Label layoutX="46.0" layoutY="383.0" text="미리보기" textFill="WHITE" />
+            <ImageView fx:id="preview" fitHeight="134.0" fitWidth="142.0" layoutX="44.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true" />
 
-<Pane fx:controller="controller.coffee.CoffeeAdd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button fx:id="btnadd" layoutX="245.0" layoutY="554.0" mnemonicParsing="false" onAction="#add" text="메뉴 등록" />
-      <Button fx:id="btncancel" layoutX="327.0" layoutY="554.0" mnemonicParsing="false" onAction="#cancel" text="취소" />
-      <Label layoutX="27.0" layoutY="23.0" text="메뉴 등록">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtname" layoutX="27.0" layoutY="80.0" prefHeight="23.0" prefWidth="342.0" promptText="제품명 입력" />
-      <TextField fx:id="txtcontent" layoutX="27.0" layoutY="118.0" prefHeight="141.0" prefWidth="342.0" promptText="제품 설명 입력" />
-      <TextField fx:id="txtprice" layoutX="27.0" layoutY="277.0" prefHeight="23.0" prefWidth="342.0" promptText="제품 가격 입력(숫자만)" />
-      <Button fx:id="btnimgadd" layoutX="27.0" layoutY="316.0" mnemonicParsing="false" onAction="#imgadd" text="제품 사진 등록" />
-      <ImageView fx:id="preview" fitHeight="173.0" fitWidth="342.0" layoutX="29.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="27.0" layoutY="345.0" text="미리보기" />
-   </children>
-</Pane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.order.Orderoption">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblback" layoutX="313.0" layoutY="22.0" onMouseClicked="#back" prefHeight="21.0" prefWidth="53.0" text="뒤로가기" />
+            <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="20.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Desktop/구름.PNG" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="272.0" prefHeight="21.0" prefWidth="57.0" text="수량">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="Q" layoutX="282.0" layoutY="275.0" prefHeight="15.0" prefWidth="18.0" text="3" />
+            <Button fx:id="btnminus" layoutX="235.0" layoutY="271.0" mnemonicParsing="false" onAction="#minus" text="-" />
+            <Button fx:id="btnplus" layoutX="313.0" layoutY="271.0" mnemonicParsing="false" onAction="#plus" text="+" />
+            <RadioButton fx:id="opthot" layoutX="259.0" layoutY="106.0" mnemonicParsing="false" text="HOT" />
+            <RadioButton fx:id="optice" layoutX="259.0" layoutY="159.0" mnemonicParsing="false" text="ICE" />
+            <Label layoutX="36.0" layoutY="328.0" prefHeight="21.0" prefWidth="57.0" text="사이즈">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="optreg" layoutX="213.0" layoutY="331.0" mnemonicParsing="false" text="Regular" />
+            <RadioButton fx:id="optext" layoutX="301.0" layoutY="331.0" mnemonicParsing="false" text="Extra" />
+            <RadioButton fx:id="opes" layoutX="213.0" layoutY="380.0" mnemonicParsing="false" text="에스프레소 샷">
+               <toggleGroup>
+                  <ToggleGroup fx:id="a" />
+               </toggleGroup></RadioButton>
+            <Label layoutX="36.0" layoutY="378.0" text="옵션">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="optchoco" layoutX="213.0" layoutY="416.0" mnemonicParsing="false" text="초콜렛 칩" toggleGroup="$a" />
+            <RadioButton fx:id="optsyrup" layoutX="213.0" layoutY="449.0" mnemonicParsing="false" text="시럽" toggleGroup="$a" />
+            <Button fx:id="btncart" layoutX="36.0" layoutY="519.0" mnemonicParsing="false" onAction="#cart" prefHeight="50.0" prefWidth="150.0" text="장바구니" />
+            <Line endX="240.0" layoutX="133.0" layoutY="367.0" startX="-100.0" />
+            <Line endX="240.0" layoutX="133.0" layoutY="313.0" startX="-100.0" />
+            <Button fx:id="cancel" layoutX="214.0" layoutY="519.0" mnemonicParsing="false" onAction="#cancel" prefHeight="50.0" prefWidth="150.0" text="취소" />
+            <Label fx:id="cart" layoutX="255.0" layoutY="25.0" onMouseClicked="#cart" text="장바구니" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

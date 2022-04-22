@@ -20,13 +20,13 @@ public class Start extends Application {
 		// 7. 씬 -> 스테이지 
 		stage.setScene(scene);
 		// 3. 스테이지로고 설정 
-			Image image = new Image("/img/logo.png"); // 1. 이미지 불러오기 [ 이미지 객체화 ]  
+			Image image = new Image("/img/mainlogo.png"); // 1. 이미지 불러오기 [ 이미지 객체화 ]  
 			// Image image2 = new Image("C:/Users/505-t/git/ezen_web_2022_A/java2/src/img/stagelogo.jpeg"); // 1. 이미지 불러오기 [ 이미지 객체화 ]  
 				// 절대경로  vs 상대경로 
 				// 절대경로 : 모든 경로
 					//  C:\Users\505-t\git\ezen_web_2022_A\java2\src\img\파일명.확장자
 				// 상대경로 : 현 위치[프로젝트기준 src] 기준 경로 
-					//  생략 [ src폴더부터 ]  /img/파일명.확장자
+					//  생략 [ src폴더부터 ]  /img/파일명.확장자 
 			stage.getIcons().add(image); // 3. 스테이지 아이콘설정 
 		stage.setResizable(false); // 4. 스테이지 크기 변경 불가 
 		stage.setTitle("ERIYA"); // 2.스테이지 창 이름
