@@ -25,26 +25,26 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="282.0" layoutY="275.0" prefHeight="15.0" prefWidth="18.0" text="3" textFill="WHITE" />
-            <Button layoutX="234.0" layoutY="271.0" mnemonicParsing="false" text="-" />
-            <Button layoutX="313.0" layoutY="271.0" mnemonicParsing="false" text="+" />
-            <RadioButton layoutX="259.0" layoutY="106.0" mnemonicParsing="false" text="HOT" textFill="WHITE" />
-            <RadioButton layoutX="259.0" layoutY="159.0" mnemonicParsing="false" text="ICE" textFill="WHITE" />
+            <Label fx:id="Q" layoutX="282.0" layoutY="275.0" prefHeight="15.0" prefWidth="18.0" text="3" textFill="WHITE" />
+            <Button fx:id="btnplus" layoutX="234.0" layoutY="271.0" mnemonicParsing="false" onAction="#plus" text="-" />
+            <Button fx:id="btnplus" layoutX="313.0" layoutY="271.0" mnemonicParsing="false" onAction="#plus" text="+" />
+            <RadioButton fx:id="opthot" layoutX="259.0" layoutY="106.0" mnemonicParsing="false" text="HOT" textFill="WHITE" />
+            <RadioButton fx:id="optice" layoutX="259.0" layoutY="159.0" mnemonicParsing="false" text="ICE" textFill="WHITE" />
             <Label layoutX="36.0" layoutY="328.0" prefHeight="21.0" prefWidth="57.0" text="사이즈" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <RadioButton layoutX="213.0" layoutY="331.0" mnemonicParsing="false" text="Regular" textFill="WHITE" />
-            <RadioButton layoutX="301.0" layoutY="331.0" mnemonicParsing="false" text="Extra" textFill="WHITE" />
-            <RadioButton layoutX="213.0" layoutY="380.0" mnemonicParsing="false" text="에스프레소 샷" textFill="WHITE" />
+            <RadioButton fx:id="optreg" layoutX="213.0" layoutY="331.0" mnemonicParsing="false" text="Regular" textFill="WHITE" />
+            <RadioButton fx:id="optext" layoutX="301.0" layoutY="331.0" mnemonicParsing="false" text="Extra" textFill="WHITE" />
+            <RadioButton fx:id="opes" layoutX="213.0" layoutY="380.0" mnemonicParsing="false" text="에스프레소 샷" textFill="WHITE" />
             <Label layoutX="36.0" layoutY="378.0" text="옵션" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <RadioButton layoutX="213.0" layoutY="416.0" mnemonicParsing="false" text="초콜렛 칩" textFill="WHITE" />
-            <RadioButton layoutX="213.0" layoutY="449.0" mnemonicParsing="false" text="시럽" textFill="WHITE" />
+            <RadioButton fx:id="optchoco" layoutX="213.0" layoutY="416.0" mnemonicParsing="false" text="초콜렛 칩" textFill="WHITE" />
+            <RadioButton fx:id="optsyrup" layoutX="213.0" layoutY="449.0" mnemonicParsing="false" text="시럽" textFill="WHITE" />
             <Button fx:id="btncart" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#cart" prefHeight="40.0" prefWidth="130.0" text="장바구니" />
             <Line endX="240.0" layoutX="133.0" layoutY="367.0" startX="-100.0" stroke="WHITE" />
             <Line endX="240.0" layoutX="133.0" layoutY="313.0" startX="-100.0" stroke="WHITE" />
