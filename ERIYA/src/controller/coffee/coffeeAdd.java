@@ -7,7 +7,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.Main;
-import controller.home.Home;
 import dao.FoodDao;
 import dto.Food;
 import javafx.event.ActionEvent;
@@ -19,6 +18,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -48,7 +48,7 @@ public class coffeeAdd implements Initializable{
     private TextField txtname;
 
     @FXML
-    private TextField txtcontent;
+    private TextArea txtcontent;
 
     @FXML
     private TextField txtprice;

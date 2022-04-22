@@ -72,8 +72,11 @@ public class Stat implements Initializable{
 			}
 			lblsell.setText("가장 많이 팔린 음료 : "+m); // dto.food에서 m 번호의 음료 이름 호출
 			
-	//일별 매출
+			//일별 매출
 			XYChart.Series series = new XYChart.Series<>();
+			 XYChart.Series week = new XYChart.Series<>();
+			 Calendar c1 = Calendar.getInstance(); 
+			 Calendar c2 = Calendar.getInstance(); 
 //			ObservableList<XYChart.Series<String, Integer>> list = FXCollections.observableArrayList();
 			//데이터 가져오기
 				for(int i=0; i<sp1.length; i++) {
@@ -114,13 +117,14 @@ public class Stat implements Initializable{
 						String[] J;
 						J = sp1[q-1].split(",");
 						Date d1=sdf.parse(j[3]); Date d2=sdf.parse(J[3]); // 날짜 Date형식으로 변환
-						Calendar c1 = Calendar.getInstance(); c1.setTime(d1); Calendar c2 = Calendar.getInstance(); c2.setTime(d2); // 달력에 넣기
+						
 						if(c1.get(Calendar.WEEK_OF_MONTH)==c2.get(Calendar.WEEK_OF_MONTH)) { //둘이 같은 주 라면
 							s+=Integer.parseInt(J[2]);
 						}
 					}
 				} // 주간for e
-				 System.out.println("주간매출 확인: "+s);
+				System.out.println("주간매출 확인 "+c1.get(Calendar.WEEK_OF_YEAR)+"주차 매출 :"+s);
+				 week.getData().add(new XYChart.Data(c1.get(Calendar.WEEK_OF_YEAR)+"주차",s));
 		} // for e
 				//chartday.getData().add(series); // 데이터 막대차트에 추가
 				//chartweek.getData().add(week);
@@ -132,6 +136,7 @@ public class Stat implements Initializable{
 //				XYChart.Data data = new XYChart.Data<>( 1 , 2  );
 //				series2.getData().add(data);
 				chartday.getData().add(series);
+				chartweek.getData().add(week);
 		} catch (Exception e) {
 			e.printStackTrace();
 	}

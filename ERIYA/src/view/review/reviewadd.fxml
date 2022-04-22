@@ -5,6 +5,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
@@ -12,12 +14,17 @@
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblback" layoutX="292.0" layoutY="45.0" onMouseClicked="#back" prefHeight="36.0" prefWidth="88.0" text="뒤로가기" textFill="WHITE" />
-            <TextField fx:id="txtrname" layoutX="32.0" layoutY="268.0" promptText="리뷰제목" />
-            <TextArea fx:id="txtrcontent" layoutX="32.0" layoutY="300.0" prefHeight="200.0" prefWidth="338.0" promptText="리뷰 내용" />
-            <Button fx:id="addreview" layoutX="39.0" layoutY="538.0" mnemonicParsing="false" onAction="#addreview" prefHeight="35.0" prefWidth="134.0" text="등록" />
-            <Button fx:id="cancel" layoutX="225.0" layoutY="538.0" mnemonicParsing="false" onAction="#cancel" prefHeight="35.0" prefWidth="134.0" text="취소" />
-            <PasswordField layoutX="223.0" layoutY="268.0" promptText="pw" />
+            <Label fx:id="lblback" layoutX="333.0" layoutY="14.0" onMouseClicked="#back" prefHeight="22.0" prefWidth="52.0" text="뒤로가기" textFill="WHITE" />
+            <TextField fx:id="txtrname" layoutX="32.0" layoutY="192.0" promptText="리뷰제목" />
+            <TextArea fx:id="txtrcontent" layoutX="32.0" layoutY="227.0" prefHeight="273.0" prefWidth="338.0" promptText="리뷰 내용" />
+            <Button fx:id="addreview" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#addreview" prefHeight="40.0" prefWidth="130.0" text="등록" />
+            <Button fx:id="cancel" layoutX="230.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
+            <PasswordField layoutX="232.0" layoutY="192.0" promptText="pw" />
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/이리야2.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

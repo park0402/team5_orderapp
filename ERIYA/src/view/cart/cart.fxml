@@ -4,24 +4,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cart.Cart">
    <center>
-      <AnchorPane prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblback" layoutX="298.0" layoutY="22.0" onMouseClicked="#back" prefHeight="36.0" prefWidth="88.0" text="뒤로가기" />
-            <TableView layoutX="27.0" layoutY="129.0" prefHeight="355.0" prefWidth="349.0">
+            <Label fx:id="lblback" layoutX="330.0" layoutY="14.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="56.0" text="뒤로가기" textFill="WHITE" />
+            <TableView layoutX="48.0" layoutY="240.0" prefHeight="255.0" prefWidth="310.0">
               <columns>
-                <TableColumn prefWidth="175.0" text="제품명" />
-                <TableColumn prefWidth="82.0" text="개수" />
-                  <TableColumn prefWidth="91.0" text="가격" />
+                <TableColumn prefWidth="167.0" text="제품명" />
+                <TableColumn prefWidth="50.0" text="개수" />
+                  <TableColumn prefWidth="92.0" text="가격" />
               </columns>
             </TableView>
-            <Button fx:id="btnpay" layoutX="27.0" layoutY="511.0" mnemonicParsing="false" onAction="#pay" prefHeight="55.0" prefWidth="163.0" text="결제" />
-            <Button fx:id="btnback" layoutX="213.0" layoutY="511.0" mnemonicParsing="false" onAction="#backpage" prefHeight="55.0" prefWidth="163.0" text="취소" />
-            <Button layoutX="311.0" layoutY="90.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="62.0" text="삭제" />
+            <Button fx:id="btnpay" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#pay" prefHeight="40.0" prefWidth="130.0" text="결제" />
+            <Button fx:id="btnback" layoutX="230.0" layoutY="520.0" mnemonicParsing="false" onAction="#backpage" prefHeight="40.0" prefWidth="130.0" text="취소" />
+            <Button layoutX="299.0" layoutY="207.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="62.0" text="삭제" />
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/이리야2.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
