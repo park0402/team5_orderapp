@@ -14,7 +14,7 @@
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblback" layoutX="313.0" layoutY="22.0" onMouseClicked="#back" prefHeight="21.0" prefWidth="53.0" text="뒤로가기" textFill="WHITE" />
+            <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
             <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="20.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../Desktop/구름.PNG" />
@@ -48,8 +48,8 @@
             <Button fx:id="btncart" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#cart" prefHeight="40.0" prefWidth="130.0" text="장바구니" />
             <Line endX="240.0" layoutX="133.0" layoutY="367.0" startX="-100.0" stroke="WHITE" />
             <Line endX="240.0" layoutX="133.0" layoutY="313.0" startX="-100.0" stroke="WHITE" />
-            <Button fx:id="cancel" layoutX="230.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
-            <Label fx:id="cart" layoutX="255.0" layoutY="25.0" onMouseClicked="#cart" text="장바구니" textFill="WHITE" />
+            <Button fx:id="cancel" layoutX="220.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
+            <Label fx:id="cart" layoutX="255.0" layoutY="15.0" onMouseClicked="#cart" prefHeight="20.0" prefWidth="50.0" text="장바구니" textFill="WHITE" />
          </children>
       </AnchorPane>
    </center>

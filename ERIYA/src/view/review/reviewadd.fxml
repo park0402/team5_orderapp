@@ -14,12 +14,12 @@
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblback" layoutX="333.0" layoutY="14.0" onMouseClicked="#back" prefHeight="22.0" prefWidth="52.0" text="뒤로가기" textFill="WHITE" />
-            <TextField fx:id="txtrname" layoutX="32.0" layoutY="192.0" promptText="리뷰제목" />
-            <TextArea fx:id="txtrcontent" layoutX="32.0" layoutY="227.0" prefHeight="273.0" prefWidth="338.0" promptText="리뷰 내용" />
+            <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
+            <TextField fx:id="txtrname" layoutX="50.0" layoutY="192.0" prefHeight="25.0" prefWidth="130.0" promptText="리뷰제목" />
+            <TextArea fx:id="txtrcontent" layoutX="50.0" layoutY="227.0" prefHeight="270.0" prefWidth="300.0" promptText="리뷰 내용" />
             <Button fx:id="addreview" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#addreview" prefHeight="40.0" prefWidth="130.0" text="등록" />
-            <Button fx:id="cancel" layoutX="230.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
-            <PasswordField layoutX="232.0" layoutY="192.0" promptText="pw" />
+            <Button fx:id="cancel" layoutX="220.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
+            <PasswordField layoutX="220.0" layoutY="192.0" prefHeight="25.0" prefWidth="130.0" promptText="pw" />
             <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/이리야2.png" />

@@ -18,9 +18,9 @@
                   <Image url="@../../img/이리야2.png" />
           		</image>
      		 </ImageView>
-            <Label fx:id="lblback" layoutX="334.0" layoutY="14.0" onMouseClicked="#back" prefHeight="28.0" prefWidth="53.0" text="뒤로가기" textFill="WHITE" />
+            <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
             <Button fx:id="btnadd" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="130.0" text="메뉴추가" />
-            <Button fx:id="btncancel" layoutX="230.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
+            <Button fx:id="btncancel" layoutX="220.0" layoutY="520.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="130.0" text="취소" />
             <TextField fx:id="txtname" layoutX="45.0" layoutY="250.0" prefHeight="25.0" prefWidth="130.0" promptText="제품명 입력" />
             <TextField fx:id="txtprice" layoutX="45.0" layoutY="415.0" prefHeight="25.0" prefWidth="130.0" promptText="제품 가격 입력" />
             <Button fx:id="btnimgadd" layoutX="205.0" layoutY="415.0" mnemonicParsing="false" onAction="#imgadd" prefHeight="23.0" prefWidth="108.0" text="제품 사진 등록" />

@@ -39,8 +39,8 @@
                 </Tab>
               </tabs>
             </TabPane>
-            <Label fx:id="lblback" layoutX="335.0" layoutY="13.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="51.0" text="뒤로가기" textFill="WHITE" />
-            <Label fx:id="lblcart" layoutX="14.0" layoutY="15.0" onMouseClicked="#cart" text="장바구니" textFill="WHITE" />
+            <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
+            <Label fx:id="lblcart" layoutX="20.0" layoutY="15.0" onMouseClicked="#cart" prefHeight="20.0" prefWidth="50.0" text="장바구니" textFill="WHITE" />
             <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/이리야2.png" />

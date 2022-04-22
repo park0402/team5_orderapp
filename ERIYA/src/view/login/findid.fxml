@@ -13,7 +13,7 @@
             <Font name="Yj BACDOO Bold" size="29.0" />
          </font>
       </Button>
-      <Button fx:id="btnback" layoutX="315.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #00ff0000;" text="뒤로가기" textFill="WHITE">
+      <Button fx:id="btnback" layoutX="330.0" layoutY="15.0" mnemonicParsing="false" onAction="#back" prefHeight="23.0" prefWidth="65.0" style="-fx-background-color: #00ff0000;" text="뒤로가기" textFill="WHITE">
          <font>
             <Font name="Yj BACDOO Bold" size="12.0" />
          </font>
