@@ -96,4 +96,16 @@ public class FoodDao {
 		}catch(Exception e) {System.out.println("제품가격조회오류 "); e.printStackTrace();}
 		return 0;
 	}
+	//제품 이름 조회
+	public String fName(int fnum) {
+		try {
+			String sql="select fname=? from food where fnum=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(2, fnum);
+			rs=ps.executeQuery();
+			String fname=rs.getString(1);
+			return fname;
+		}catch(Exception e) {System.out.println("제품이름조회오류 "); e.printStackTrace();}
+		 return null;
+	}
 }

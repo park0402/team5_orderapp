@@ -72,13 +72,12 @@ public class Stat implements Initializable{
 			}
 			lblsell.setText("가장 많이 팔린 음료 : "+m); // dto.food에서 m 번호의 음료 이름 호출
 			
-	//일별 매출
+			//일별 매출
 			XYChart.Series series = new XYChart.Series<>();
 			 XYChart.Series week = new XYChart.Series<>();
 			 Calendar c1 = Calendar.getInstance(); 
 			 Calendar c2 = Calendar.getInstance(); 
-//			ObservableList<XYChart.Series<String, Integer>> list = FXCollections.observableArrayList();
-			//데이터 가져오기
+			 //데이터 가져오기
 				for(int i=0; i<sp1.length; i++) {
 				String[] j = sp1[i].split(","); // 데이터 분할 0: 구매자 1: 음료번호 2: 가격 3: 날짜
 				//날짜별 매출값 구하기
@@ -97,14 +96,6 @@ public class Stat implements Initializable{
 				 System.out.println( "테스트 날짜 : " +  j[3] +"   가격:    " + c);
 				 series.getData().add(  new XYChart.Data(   j[3]    ,c));
 				 System.out.println(series.getData().get(i) );
-//					Map<String, Integer> map = new HashMap<String, Integer>();
-//					map.put(j[3], c);
-//					for(String key : map.keySet()) {
-//						XYChart.Data data = new XYChart.Data<>(key, map.get(key));
-//						series.getData().add(data);
-//					}
-//				 XYChart.Data data = new XYChart.Data<>( j[3] , c );	//매출값 넣기
-//					series.getData().add(data);// 계열에 데이터 객체 추가
 				//주간 매출
 				
 					//날짜 Date형식으로 변환
@@ -126,15 +117,7 @@ public class Stat implements Initializable{
 				 System.out.println("주간매출 확인 "+c1.get(Calendar.WEEK_OF_YEAR)+"주차 매출 :"+s);
 				 week.getData().add(new XYChart.Data(c1.get(Calendar.WEEK_OF_YEAR)+"주차",s));
 		} // for e
-				//chartday.getData().add(series); // 데이터 막대차트에 추가
-				//chartweek.getData().add(week);
-//				list.addAll(series);
-//				System.out.println("데이터 확인 : "+list.get(0).getData().get(0).getXValue());
-//				System.out.println("asdasdas:" +list.toString() );
-//				chartday.setData(list);
-//				XYChart.Series series2 = new XYChart.Series<>();
-//				XYChart.Data data = new XYChart.Data<>( 1 , 2  );
-//				series2.getData().add(data);
+				
 				chartday.getData().add(series);
 				chartweek.getData().add(week);
 		} catch (Exception e) {

@@ -105,7 +105,7 @@ public class Orderoption implements Initializable{
 	         
 	            // 2. 객체화
 	            Order order = new Order(food.getFnum(), member.getMnum(), opt1, opt2, esp, choco, syrup, cupnum);
-	            controller.cart.Cart.orderList.add(order); // 주문을 리스트에 저장
+	            controller.cart.CartControl.orderList.add(order); // 주문을 리스트에 저장
 	    	Main.instance.loadpage("/view/cart/cart.fxml");
 	    }
 	    int cupnum;
