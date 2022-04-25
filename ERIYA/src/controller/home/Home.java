@@ -99,7 +99,7 @@ public class Home implements Initializable{
 	 @FXML
 	    public void order(ActionEvent event) {
 	    	System.out.println("주문 버튼을 눌렀습니다.");
-			Main.instance.loadpage("/view/order/order.fxml");
+	    	loadpage("/view/coffee/coffeeList.fxml");
 	    }
 
     @FXML

@@ -76,7 +76,6 @@ public class CartControl implements Initializable{
 			String[] sp1 = new String(bytes).split("\n"); // \n으로 자르기
 			String[] sp2 = sp1[sp1.length-1].split(","); // 마지막 주문목록 가져오기
 			lastOrder=Integer.parseInt(sp2[0]); // 마지막 주문번호 넣기
-		}catch(Exception e) {e.printStackTrace();}
 		//주문한 목록 전부 불러와서 출력
 		for(Order temp : orderList) {
 			String fname=FoodDao.foodDao.fName(temp.getFnum());
@@ -94,6 +93,7 @@ public class CartControl implements Initializable{
 			final int fPrice=price;
 			tblprice.setCellValueFactory(item->new ReadOnlyStringWrapper(fPrice+""));
 			tblprice.setPrefWidth(40);
-		}
+			}
+		}catch(Exception e) {e.printStackTrace();}
 	}
 }

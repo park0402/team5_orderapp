@@ -40,10 +40,9 @@ public class FoodDao {
 	public ArrayList<Food> list(){
 		try {
 			ArrayList<Food> foodList = new ArrayList<>();
-			String sql="select*from food";
+			String sql="select * from food";
 			ps=con.prepareStatement(sql);
 			rs=ps.executeQuery();
-			
 			while(rs.next()) {
 				Food food = new Food(
 						rs.getInt(1),

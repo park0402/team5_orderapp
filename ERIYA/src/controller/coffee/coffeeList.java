@@ -45,6 +45,7 @@ public class coffeeList implements Initializable{
     }
     
     public static Food select; // 선택한 상품 데이터 저장
+    public static int id;
 	 @FXML
 	 void addlist(ActionEvent event) {
 		 	System.out.println("상품추가 버튼을 눌렀습니다.");
@@ -52,7 +53,7 @@ public class coffeeList implements Initializable{
 	 }
 	 
 	 public void show() { // 모든 제품 출력하기
-		 try {
+
 			if(vbox.getChildren().isEmpty()==false) { // vbox가 비어있지 않으면
 				 vbox.getChildren().remove(0); // 0번 삭제
 			 }
@@ -97,13 +98,14 @@ public class coffeeList implements Initializable{
 					button.setOnAction((e)->{ // 클릭시 이벤트
 						int id = Integer.parseInt(e.toString().split(",")[0].split("=")[2]);
 						select=foodList.get(id);
-						Home.home.loadpage("/view/order/orderoption.fxml");
+						System.out.println(id+"번 음료 조회");
+						Main.instance.loadpage("/view/order/orderoption.fxml");
 					});
 			gridPane.add(button, col, row+1);	
 			i++;
 				}
 			}
-		 }catch(Exception e) {System.out.println("제품리스트 출력 오류 "); e.printStackTrace();}
+
 		} // show e
 
 	@Override
