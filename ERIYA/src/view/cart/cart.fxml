@@ -16,9 +16,9 @@
             <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
             <TableView layoutX="48.0" layoutY="240.0" prefHeight="255.0" prefWidth="310.0">
               <columns>
-                <TableColumn prefWidth="167.0" text="제품명" />
-                <TableColumn prefWidth="50.0" text="개수" />
-                  <TableColumn prefWidth="92.0" text="가격" />
+                <TableColumn fx:id="tblname" prefWidth="167.0" text="제품명" />
+                <TableColumn fx:id="tblQuan" prefWidth="50.0" text="개수" />
+                  <TableColumn fx:id="tblprice" prefWidth="92.0" text="가격" />
               </columns>
             </TableView>
             <Button fx:id="btnpay" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#pay" prefHeight="40.0" prefWidth="130.0" text="결제" />

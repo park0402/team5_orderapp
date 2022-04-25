@@ -32,7 +32,7 @@ public class Order implements Initializable{
     @FXML
     void cart(MouseEvent event) {
     	System.out.println("장바구니 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/cart/cart.fxml");
+		Main.instance.loadpage("/view/cart/Cart.fxml");
     }
     public void loadpage(String page) {
 		try {

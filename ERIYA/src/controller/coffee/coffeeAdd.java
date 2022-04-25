@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.Main;
+import controller.home.Home;
 import dao.FoodDao;
 import dto.Food;
 import javafx.event.ActionEvent;
@@ -72,7 +73,7 @@ public class coffeeAdd implements Initializable{
     		Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setHeaderText("제품 등록 완료");
     		alert.showAndWait();
-    		loadpage("/view/coffee/coffeeList.fxml");
+    		Main.instance.loadpage("/view/coffee/coffeeList.fxml");
     	}else {
     		Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setHeaderText("제품 등록 실패");
@@ -122,12 +123,5 @@ public class coffeeAdd implements Initializable{
 	    
 	    
 	    }
-	    public void loadpage(String page) {
-			try {
-				Parent parent = FXMLLoader.load(getClass().getResource(page));
-				borderpane.setCenter(parent);
-			} catch (Exception e) {
-				System.out.println("Load 오류 : " + e);
-			}
-		}
+	   
 }
