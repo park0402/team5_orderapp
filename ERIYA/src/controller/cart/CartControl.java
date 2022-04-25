@@ -52,7 +52,7 @@ public class CartControl implements Initializable{
     @FXML
     void back(MouseEvent event) {
     	System.out.println("뒤로가기 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/order/order.fxml");
+    	Main.instance.loadpage("/view/order/orderoption.fxml");
     }
     
     @FXML
@@ -63,16 +63,18 @@ public class CartControl implements Initializable{
 	
     @FXML
     void backpage(ActionEvent event) {
-    	Main.instance.loadpage("/view/order/order.fxml");
+    	Main.instance.loadpage("/view/order/orderoption.fxml");
     }
     public static ArrayList<Order> orderList = new ArrayList<>(); // 주문목록 저장하는 배열 선언
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		System.out.println("장바구니 화면전환 성공");
 		//마지막 주문번호 읽어와서 부여하기
-		byte[] bytes=null;
-		int lastOrder; // 마지막 주문
 		try {
-			bytes = Files.readAllBytes(Paths.get("D:/java/test.txt"));
+		
+		int lastOrder; // 마지막 주문
+		
+		byte[] bytes = Files.readAllBytes(Paths.get("D:/java/test.txt"));
 			String[] sp1 = new String(bytes).split("\n"); // \n으로 자르기
 			String[] sp2 = sp1[sp1.length-1].split(","); // 마지막 주문목록 가져오기
 			lastOrder=Integer.parseInt(sp2[0]); // 마지막 주문번호 넣기

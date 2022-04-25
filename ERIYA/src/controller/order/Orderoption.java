@@ -22,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 
 public class Orderoption implements Initializable{
 
-	  @FXML
+		@FXML
 	    private Label lblback;
 
 	    @FXML
@@ -88,9 +88,9 @@ public class Orderoption implements Initializable{
 	    	Main.instance.loadpage("/view/coffee/coffeeList.fxml");
 	    }
 	    @FXML
-	    void cart(MouseEvent event) { //장바구니에 담기 버튼 클릭시
+	    void cart(ActionEvent event) { //장바구니에 담기 버튼 클릭시
 	    	System.out.println("장바구니 버튼을 눌렀습니다.");
-
+	    	
 	               // 온도 카테고리
 	            boolean opt1 = false;
 	               if( opthot.isSelected() ) { opt1 = false;}
@@ -114,11 +114,8 @@ public class Orderoption implements Initializable{
 	         
 	            // 2. 객체화
 	            Order order = new Order(food.getFnum(), member.getMnum(), opt1, opt2, esp, choco, syrup, cupnum);
-	            System.out.println("test");
 	            controller.cart.CartControl.orderList.add(order); // 주문을 리스트에 저장
-	           System.out.println("테스트");
 	    	Main.instance.loadpage("/view/cart/cart.fxml");
-	           
 	    }
 	    int cupnum;
 	    @FXML
@@ -134,7 +131,6 @@ public class Orderoption implements Initializable{
 	    	cupnum++;
 	    	Q.setText(cupnum+"");
 	    }
-
         // 1. 컨트롤에 입력된 데이터 가져오기
 	Member member = Login.member;
 	Food food = coffeeList.select;

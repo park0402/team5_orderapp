@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import controller.Main;
 import controller.login.Login;
+import controller.login.Loginpane;
 import dao.MemberDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -67,6 +68,10 @@ public class Home implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		lblloginid.setText(Login.member.getMid()+" ´Ô");
 		lblpoint.setText("½ºÅÆÇÁ : " + Login.member.getStamp());
+		if(!Loginpane.isadmin) {
+			btnmoney.setVisible(false);
+			btnfood.setVisible(false);
+		}
 	}
 	
 	@FXML // ·Î±×¾Æ¿ô ¶óº§ Å¬¸¯

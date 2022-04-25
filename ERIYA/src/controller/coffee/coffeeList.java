@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import controller.Main;
 import controller.home.Home;
+import controller.login.Loginpane;
 import dao.FoodDao;
 import dto.Food;
 import javafx.event.ActionEvent;
@@ -111,5 +112,8 @@ public class coffeeList implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		show();
+		if(!Loginpane.isadmin) {
+			btnaddlist.setVisible(false);
+		}
 	}
 }

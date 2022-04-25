@@ -54,7 +54,6 @@
             <Line endX="240.0" layoutX="133.0" layoutY="367.0" startX="-100.0" />
             <Line endX="240.0" layoutX="133.0" layoutY="313.0" startX="-100.0" />
             <Button fx:id="cancel" layoutX="214.0" layoutY="519.0" mnemonicParsing="false" onAction="#cancel" prefHeight="50.0" prefWidth="150.0" text="취소" />
-            <Label fx:id="cart" layoutX="255.0" layoutY="25.0" onMouseClicked="#cart" text="장바구니" />
             <Label fx:id="txtprice" layoutX="39.0" layoutY="204.0" text="제품 가격" />
          </children>
       </AnchorPane>

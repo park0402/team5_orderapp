@@ -59,12 +59,15 @@ public class Loginpane implements Initializable {
     	System.out.println(" 회원가입 페이지로 이동 ");
     	Login.instance.loadpage("/view/login/signuppane.fxml");
     }
-
+    public static boolean isadmin=false;
     @FXML
     void login(ActionEvent event) {
     	
     	// 컨트롤러에 입력된 값 가져오기
     	String id = txtid.getText();
+    	if(id.equals("admin")) {
+    		isadmin=true;
+    	}
     	String password = txtpassword.getText();
     	// DB 객체 내 메소드 호출
     	boolean result = MemberDao.memberDao.login(id, password);
