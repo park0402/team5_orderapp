@@ -59,9 +59,9 @@ public class coffeeList implements Initializable{
 			ArrayList<Food> foodList = FoodDao.foodDao.list();
 			GridPane gridPane = new GridPane();
 				//여백 잡기
-			gridPane.setPadding(new Insets(100));
-			gridPane.setHgap(50);
-			gridPane.setVgap(50);
+			gridPane.setPadding(new Insets(10));
+			gridPane.setHgap(10);
+			gridPane.setVgap(10);
 		int i = 0; // 인덱스용 변수
 		for(int row = 0; row<foodList.size()/3; row++) { // 행
 			for(int col = 0; col<3; col++) { // 열
@@ -87,8 +87,8 @@ public class coffeeList implements Initializable{
 			if(remain!=0) {
 			for(int col = 0; col<remain; col++) { // 열
 				ImageView imageView = new ImageView(new Image(foodList.get(i).getFimg()));
-					imageView.setFitWidth(250);
-					imageView.setFitHeight(250);
+					imageView.setFitWidth(100);
+					imageView.setFitHeight(100);
 				Button button = new Button(null, imageView);
 					//버튼 배경제거
 					button.setStyle("-fx-background-color:transparent");
@@ -96,8 +96,8 @@ public class coffeeList implements Initializable{
 					button.setId(i+"");
 					button.setOnAction((e)->{ // 클릭시 이벤트
 						int id = Integer.parseInt(e.toString().split(",")[0].split("=")[2]);
-						select = foodList.get(id);
-						Home.home.loadpage("/view/order.orderoption.fxml");
+						select=foodList.get(id);
+						Home.home.loadpage("/view/order/orderoption.fxml");
 					});
 			gridPane.add(button, col, row+1);	
 			i++;
