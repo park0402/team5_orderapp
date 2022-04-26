@@ -5,13 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import dto.Cart;
 import controller.Main;
 import dao.FoodDao;
+import dto.File;
 import dto.Order;
-import javafx.beans.property.ReadOnlyIntegerWrapper;
-import javafx.beans.property.ReadOnlyLongWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,10 +19,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
-public class Cart implements Initializable{
+public class CartControl implements Initializable{
 
 
     @FXML
@@ -32,16 +33,16 @@ public class Cart implements Initializable{
 	private BorderPane borderpane;
 	
     @FXML
-    private TableView<?> tableview;
+    private TableView<CartDataModel> tableview;
 
     @FXML
-    private TableColumn<?, String> tblname;
+    private TableColumn<?, ?> tblname;
 
     @FXML
-    private TableColumn<?, String> tblQuan;
+    private TableColumn<?, ?> tblQuan;
 
     @FXML
-    private TableColumn<?, String> tblprice;
+    private TableColumn<?, ?> tblprice;
 
     @FXML
     private Label lblback;
@@ -52,38 +53,40 @@ public class Cart implements Initializable{
     @FXML
     void back(MouseEvent event) {
     	System.out.println("뒤로가기 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/order/order.fxml");
+    	Main.instance.loadpage("/view/coffee/coffeeList.fxml");
     }
     
     @FXML
     void pay(ActionEvent event) {
     	System.out.println("지불 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/pay/pay.fxml");
+    	Main.instance.loadpage("/view/pay/pay.fxml");
     }
 	
     @FXML
     void backpage(ActionEvent event) {
-    	Main.instance.loadpage("/view/order/order.fxml");
+    	Main.instance.loadpage("/view/coffee/coffeeList.fxml");
     }
+    
     public static ArrayList<Order> orderList = new ArrayList<>(); // 주문목록 저장하는 배열 선언
-	@Override
+    public static File file=new File(); // 파일처리할 객체 선언
+    @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		System.out.println("장바구니 화면전환 성공");
 		//마지막 주문번호 읽어와서 부여하기
-		byte[] bytes=null;
+		
+		
 		int lastOrder; // 마지막 주문
 		try {
-			bytes = Files.readAllBytes(Paths.get("D:/java/test.txt"));
+		byte[] bytes = Files.readAllBytes(Paths.get("D:/java/test.txt"));
 			String[] sp1 = new String(bytes).split("\n"); // \n으로 자르기
 			String[] sp2 = sp1[sp1.length-1].split(","); // 마지막 주문목록 가져오기
 			lastOrder=Integer.parseInt(sp2[0]); // 마지막 주문번호 넣기
-		}catch(Exception e) {e.printStackTrace();}
+		}catch(Exception e) {System.out.println("파일 불러오기 오류 : " + e);}
 		//주문한 목록 전부 불러와서 출력
+			int mNum=controller.login.Login.member.getMnum();
+			ObservableList<CartDataModel> orderData=FXCollections.observableArrayList();
 		for(Order temp : orderList) {
 			String fname=FoodDao.foodDao.fName(temp.getFnum());
-			tblname.setCellValueFactory(item->new ReadOnlyStringWrapper(fname));
-			tblname.setPrefWidth(40);
-			tblQuan.setCellValueFactory(item->new ReadOnlyStringWrapper(temp.getQuan()+""));
-			tblname.setPrefWidth(40);
 			int price=FoodDao.foodDao.price(temp.getFnum()); // 가격 넣기
 			if(temp.isOpt1()) {price+=500;} // ice면 500원추가
 			if(temp.isOpt2()) {price+=1000;} // extra면 1000원추가
@@ -92,8 +95,19 @@ public class Cart implements Initializable{
 			if(temp.isSyrup()) {price+=500;} // 시럽 500원추가
 			price*=temp.getQuan(); // 선택한 갯수만큼 곱하기
 			final int fPrice=price;
-			tblprice.setCellValueFactory(item->new ReadOnlyStringWrapper(fPrice+""));
-			tblprice.setPrefWidth(40);
-		}
+			orderData.add(new CartDataModel(fname, temp.getQuan(), fPrice));
+			try {
+			TableColumn tc = tableview.getColumns().get(0);
+			tc.setCellValueFactory(new PropertyValueFactory<>("fname"));
+			
+			tc=tableview.getColumns().get(1);
+			tc.setCellValueFactory(new PropertyValueFactory<>("quan"));
+			
+			tc=tableview.getColumns().get(2);
+			tc.setCellValueFactory(new PropertyValueFactory<>("fprice"));
+			}catch(Exception e) {System.out.println("테이블 세팅 오류 "+e);}
+			 // 테이블뷰에 넣기
+		} // 데이터 입력 끝
+		tableview.setItems(orderData);
 	}
 }

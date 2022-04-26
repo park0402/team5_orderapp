@@ -23,7 +23,7 @@
                 <NumberAxis side="LEFT" tickLabelFill="WHITE" />
               </yAxis>
             </BarChart>
-            <Label fx:id="lblsell" layoutX="29.0" layoutY="157.0" prefHeight="18.0" prefWidth="240.0" text="가장 많이 팔린 음료 : " textFill="WHITE">
+            <Label fx:id="lblsell" layoutX="29.0" layoutY="166.0" prefHeight="18.0" prefWidth="240.0" text="가장 많이 팔린 음료 : " textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Label>
@@ -43,7 +43,7 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/이리야2.png" />
                </image>

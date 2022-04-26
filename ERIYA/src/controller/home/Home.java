@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import controller.Main;
 import controller.login.Login;
+import controller.login.Loginpane;
 import dao.MemberDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -67,6 +68,10 @@ public class Home implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		lblloginid.setText(Login.member.getMid()+" 님");
 		lblpoint.setText("스탬프 : " + Login.member.getStamp());
+		if(!Loginpane.isadmin) {
+	         btnmoney.setVisible(false);
+	         btnfood.setVisible(false);
+	      }
 	}
 	
 	@FXML // 로그아웃 라벨 클릭
@@ -75,31 +80,10 @@ public class Home implements Initializable{
 		Main.instance.loadpage("/view/login/login.fxml");
 	}
 	
-	@FXML // 회원탈퇴 라벨 클릭
-	public void delete(MouseEvent e) {
-	
-		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setHeaderText("탈퇴 하시겠습니까?");
-		
-		Optional<ButtonType> optional = alert.showAndWait();
-		if(optional.get() == ButtonType.OK) {
-			boolean result = MemberDao.memberDao.delete(Login.member.getMnum());
-			
-			if(result) {
-				// 로그아웃 [Login 클래스 내 Member 객체 null으로 수
-				Login.member = null;
-				// 페이지 전환
-				Main.instance.loadpage("/view/login/login.fxml");
-			}else {
-				
-			}
-		}
-		
-	}
 	 @FXML
 	    public void order(ActionEvent event) {
 	    	System.out.println("주문 버튼을 눌렀습니다.");
-			Main.instance.loadpage("/view/order/order.fxml");
+			Main.instance.loadpage("/view/coffee/coffeeList.fxml");
 	    }
 
     @FXML

@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.order.Order">
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.order.Order">
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
-            <TabPane layoutY="174.0" prefHeight="426.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Untitled Tab 1">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Button layoutX="37.0" layoutY="44.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Button" />
-                              <Button layoutX="157.0" layoutY="44.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Button" />
-                              <Button layoutX="277.0" layoutY="44.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Button" />
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Untitled Tab 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Button layoutX="182.0" layoutY="37.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Button" />
-                              <Button layoutX="112.0" layoutY="217.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Button" />
-                              <Button layoutX="53.0" layoutY="61.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Button" />
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
             <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
             <Label fx:id="lblcart" layoutX="20.0" layoutY="15.0" onMouseClicked="#cart" prefHeight="20.0" prefWidth="50.0" text="장바구니" textFill="WHITE" />
             <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -46,6 +19,11 @@
                   <Image url="@../../img/이리야2.png" />
                </image>
             </ImageView>
+            <ScrollPane fx:id="scrollpane" layoutX="20.0" layoutY="260.0" prefHeight="300.0" prefWidth="360.0">
+               <content>
+                  <VBox fx:id="vbox" prefHeight="300.0" prefWidth="350.0" />
+               </content>
+            </ScrollPane>
          </children>
       </AnchorPane>
    </center>

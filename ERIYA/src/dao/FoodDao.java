@@ -40,10 +40,9 @@ public class FoodDao {
 	public ArrayList<Food> list(){
 		try {
 			ArrayList<Food> foodList = new ArrayList<>();
-			String sql="select*from food";
+			String sql="select * from food";
 			ps=con.prepareStatement(sql);
 			rs=ps.executeQuery();
-			
 			while(rs.next()) {
 				Food food = new Food(
 						rs.getInt(1),
@@ -85,27 +84,34 @@ public class FoodDao {
 		return false;
 	}
 	//제품 가격 조회
-		public int price(int fnum) {
-			try {
-				String sql="select fprice=? from food where fnum=?";
-				ps=con.prepareStatement(sql);
-				ps.setInt(2, fnum);
-				rs=ps.executeQuery();
-				int price = rs.getInt(1);
-				return price;
-			}catch(Exception e) {System.out.println("제품가격조회오류 "); e.printStackTrace();}
-			return 0;
-		}
-		//제품 이름 조회
-		public String fName(int fnum) {
-			try {
-				String sql="select fname=? from food where fnum=?";
-				ps=con.prepareStatement(sql);
-				ps.setInt(2, fnum);
-				rs=ps.executeQuery();
-				String fname=rs.getString(1);
-				return fname;
-			}catch(Exception e) {System.out.println("제품이름조회오류 "); e.printStackTrace();}
-			 return null;
-		}
+	public int price(int fnum) {
+		try {
+			String sql="select * from food where fnum=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, fnum);
+			rs=ps.executeQuery();
+			int price=0;
+			while(rs.next()) {
+				price = rs.getInt("fprice");
+			}
+			
+			return price;
+		}catch(Exception e) {System.out.println("제품가격조회오류 "); e.printStackTrace();}
+		return 0;
+	}
+	//제품 이름 조회
+	public String fName(int fnum) {
+		try {
+			String sql="select * from food where fnum=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, fnum);
+			rs=ps.executeQuery();
+			String fname=null;
+			while(rs.next()) {
+				fname=rs.getString("fname");
+			}
+			return fname;
+		}catch(Exception e) {System.out.println("제품이름조회오류 "); e.printStackTrace();}
+		 return null;
+	}
 }

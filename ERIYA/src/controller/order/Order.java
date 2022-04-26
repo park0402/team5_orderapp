@@ -9,45 +9,51 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
-public class Order implements Initializable{
+public class Order implements Initializable {
 
-	 @FXML
+	@FXML
 	 private BorderPane borderpane;
+	
+	@FXML
+	private Label lblback;
 
-	    @FXML
-	    private Label lblcart;
+	@FXML
+	private Label lblcart;
 
-    @FXML
-    private Label lblback;
+	@FXML
+	private ScrollPane scrollpane;
 
-    @FXML
-    void back(MouseEvent event) {
-    	System.out.println("뒤로가기 버튼을 눌렀습니다.");
+	@FXML
+	private VBox vbox;
+
+	@FXML
+	void back(MouseEvent event) {
+		System.out.println("뒤로가기 버튼을 눌렀습니다.");
 		Main.instance.loadpage("/view/home/home.fxml");
-    }
-    
-    @FXML
-    void cart(MouseEvent event) {
-    	System.out.println("장바구니 버튼을 눌렀습니다.");
-		Main.instance.loadpage("/view/cart/Cart.fxml");
-    }
-    public void loadpage(String page) {
-		try {
-			Parent parent = FXMLLoader.load(getClass().getResource(page));
-			borderpane.setCenter(parent);
-		} catch (Exception e) {
-			System.out.println("Load 오류 : " + e);
-		}
 	}
-@Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
 
-    }
+	@FXML
+	void cart(MouseEvent event) {
+		System.out.println("장바구니 버튼을 눌렀습니다.");
+		Main.instance.loadpage("/view/cart/cart.fxml");
+	}
+	
+	 public void loadpage(String page) {
+			try {
+				Parent parent = FXMLLoader.load(getClass().getResource(page));
+				borderpane.setCenter(parent);
+			} catch (Exception e) {
+				System.out.println("Load 오류 : " + e);
+			}
+		}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+	}
 }
-
-
-
-

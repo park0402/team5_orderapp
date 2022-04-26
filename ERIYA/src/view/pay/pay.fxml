@@ -19,14 +19,14 @@
           		</image>
      		 </ImageView>
             <Label fx:id="lblback" layoutX="330.0" layoutY="15.0" onMouseClicked="#back" prefHeight="20.0" prefWidth="50.0" text="뒤로가기" textFill="WHITE" />
-            <Label layoutX="52.0" layoutY="345.0" prefHeight="15.0" prefWidth="179.0" text="총 결제금액 :" textFill="WHITE">
+            <Label fx:id="lblprice" layoutX="100.0" layoutY="250.0" prefHeight="20.0" prefWidth="200.0" text="총 결제금액 :" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button layoutX="50.0" layoutY="520.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" text="결제하기" />
+            <Button fx:id="btnpay" layoutX="50.0" layoutY="520.0" mnemonicParsing="false" onAction="#pay" prefHeight="40.0" prefWidth="130.0" text="결제하기" />
             <Button fx:id="backpage" layoutX="230.0" layoutY="520.0" mnemonicParsing="false" onAction="#backpage" prefHeight="40.0" prefWidth="130.0" text="취소" />
-            <TextField layoutX="52.0" layoutY="397.0" prefHeight="61.0" prefWidth="142.0" promptText="결제 금액 입력" />
+            <TextField fx:id="txtprice" layoutX="100.0" layoutY="300.0" prefHeight="60.0" prefWidth="200.0" promptText="결제 금액 입력" />
          </children>
       </AnchorPane>
    </center>
