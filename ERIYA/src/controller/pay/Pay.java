@@ -1,10 +1,14 @@
 package controller.pay;
 
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
-
+import dto.File;
 import controller.Main;
+import controller.cart.CartControl;
 import controller.home.Home;
 import dao.FoodDao;
 import dto.Order;
@@ -50,6 +54,7 @@ public class Pay implements Initializable{
 	    ArrayList<Order>orderList= controller.cart.CartControl.orderList; // 주문리스트 불러오기
 
 		int cartPrice=0;
+		
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -66,15 +71,27 @@ public class Pay implements Initializable{
 				}
 				System.out.println("총 계산해야할 값 : "+cartPrice);
 				lblprice.setText("총 계산해야할 값 : "+cartPrice);
-	}   
+	}
 	@FXML
-    void pay(ActionEvent event) {
+    void pay(ActionEvent event) { // 결제하기를 눌렀을 때
+		System.out.println("결제 시작");
 		if(cartPrice>Integer.parseInt(txtprice.getText())) {
 			Alert alert=new Alert(Alert.AlertType.ERROR);
 			alert.setTitle("경고");
 			alert.setHeaderText("금액이 부족합니다");
 			alert.showAndWait();
 		}else {
+			Date today=new Date();
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			File file=CartControl.file;
+			String output = file.getOrderNum()+","+file.getfNum()+","+cartPrice+","+sdf.format(today);
+			try {
+				FileOutputStream fos = new FileOutputStream("D:/java/test.txt",true);
+				fos.write(output.getBytes());
+				fos.close();
+			} catch (Exception e) { System.out.println("메모장 아웃풋 오류 ");
+				e.printStackTrace();
+			}
 			Alert alert=new Alert(Alert.AlertType.INFORMATION);
 			alert.setTitle("안내");
 			alert.setHeaderText("결제 완료");
@@ -82,4 +99,7 @@ public class Pay implements Initializable{
 			Home.home.loadpage("/view/home/home.fxml");
 		}
     }
+	public void fileInput() { // 메모장에 적기
+		
+	}
 }
