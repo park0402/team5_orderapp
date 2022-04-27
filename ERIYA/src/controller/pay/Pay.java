@@ -92,7 +92,7 @@ public class Pay implements Initializable {
 			Date today=new Date();
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 			File file=CartControl.file;
-			String output = file.getOrderNum()+","+file.getfNum()+","+cartPrice+","+sdf.format(today);
+			String output = file.getOrderNum()+","+file.getfNum()+","+cartPrice+","+sdf.format(today)+"\n";
 			try {
 				FileOutputStream fos = new FileOutputStream("D:/java/test.txt",true);
 				fos.write(output.getBytes());
@@ -104,6 +104,7 @@ public class Pay implements Initializable {
 			alert.setTitle("안내");
 			alert.setHeaderText("결제 완료");
 			alert.showAndWait();
+			CartControl.orderList.removeAll(orderList);
 			Main.instance.loadpage("/view/home/home.fxml");
 		}
     }

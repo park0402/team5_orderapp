@@ -49,6 +49,14 @@ public class CartControl implements Initializable{
     
     @FXML
     private Button btnpay;
+    
+    @FXML
+    private Button btndelete;
+    
+    @FXML
+    void delete(ActionEvent event) {
+
+    }
 
     @FXML
     void back(MouseEvent event) {
@@ -83,6 +91,9 @@ public class CartControl implements Initializable{
 			lastOrder=Integer.parseInt(sp2[0]); // 마지막 주문번호 넣기
 		}catch(Exception e) {System.out.println("파일 불러오기 오류 : " + e);}
 		//주문한 목록 전부 불러와서 출력
+		
+		
+		
 			int mNum=controller.login.Login.member.getMnum();
 			ObservableList<CartDataModel> orderData=FXCollections.observableArrayList();
 		for(Order temp : orderList) {
@@ -109,5 +120,6 @@ public class CartControl implements Initializable{
 			 // 테이블뷰에 넣기
 		} // 데이터 입력 끝
 		tableview.setItems(orderData);
-	}
+		}
+	
 }

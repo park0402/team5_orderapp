@@ -12,20 +12,29 @@
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #2945ba;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblloginid" layoutX="23.0" layoutY="209.0" prefHeight="72.0" prefWidth="180.0" text="0000 님" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="lblloginid" layoutX="40.0" layoutY="209.0" prefHeight="72.0" prefWidth="180.0" text="0000 님" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Yu Gothic Bold" size="30.0" />
                </font></Label>
             <Label fx:id="lblpoint" layoutX="270.0" layoutY="230.0" prefHeight="30.0" prefWidth="102.0" text="스탬프 : 123" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Dotum" size="16.0" />
                </font></Label>
             <Label fx:id="lbllogout" alignment="CENTER" layoutX="330.0" layoutY="15.0" onMouseClicked="#logout" prefHeight="20.0" prefWidth="50.0" text="로그아웃" textAlignment="CENTER" textFill="WHITE" />
-            <Button fx:id="btnorderlist" layoutX="278.0" layoutY="319.0" mnemonicParsing="false" onAction="#orderlist" prefHeight="105.0" prefWidth="85.0" text="주문내역" />
-            <Button fx:id="brnreview" layoutX="160.0" layoutY="319.0" mnemonicParsing="false" onAction="#review" prefHeight="105.0" prefWidth="85.0" text="리뷰" />
-            <Button fx:id="btnorder" layoutX="37.0" layoutY="319.0" mnemonicParsing="false" onAction="#order" prefHeight="105.0" prefWidth="85.0" text="주문" />
-            <Button fx:id="btnmoney" layoutX="98.0" layoutY="441.0" mnemonicParsing="false" onAction="#money" prefHeight="105.0" prefWidth="85.0" text="매출" />
-            <Button fx:id="btnfood" layoutX="214.0" layoutY="441.0" mnemonicParsing="false" onAction="#food" prefHeight="105.0" prefWidth="85.0" text="제품관리" />
+            <Button fx:id="btnorderlist" layoutX="260.0" layoutY="320.0" mnemonicParsing="false" onAction="#orderlist" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="내역">
+               <font>
+                  <Font name="Yu Gothic Bold" size="24.0" />
+               </font></Button>
+            <Button fx:id="brnreview" layoutX="150.0" layoutY="320.0" mnemonicParsing="false" onAction="#review" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="리뷰">
+               <font>
+                  <Font name="Yu Gothic Bold" size="24.0" />
+               </font></Button>
+            <Button fx:id="btnorder" layoutX="40.0" layoutY="320.0" mnemonicParsing="false" onAction="#order" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="주문">
+               <font>
+                  <Font name="Yu Gothic Bold" size="24.0" />
+               </font></Button>
+            <Button fx:id="btnmoney" layoutX="50.0" layoutY="530.0" mnemonicParsing="false" onAction="#money" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="매출" />
+            <Button fx:id="btnfood" layoutX="260.0" layoutY="530.0" mnemonicParsing="false" onAction="#food" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="제품관리" />
             <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
            		 <image>
                   <Image url="@../../img/이리야2.png" />

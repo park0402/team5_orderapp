@@ -33,13 +33,13 @@
                <toggleGroup>
                   <ToggleGroup fx:id="a" />
                </toggleGroup></RadioButton>
-            <RadioButton fx:id="optice" layoutX="262.0" layoutY="89.0" mnemonicParsing="false" text="ICE" textFill="WHITE" toggleGroup="$a" />
+            <RadioButton fx:id="optice" layoutX="262.0" layoutY="89.0" mnemonicParsing="false" selected="true" text="ICE" textFill="WHITE" toggleGroup="$a" />
             <Label layoutX="36.0" layoutY="328.0" prefHeight="21.0" prefWidth="57.0" text="사이즈" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <RadioButton fx:id="optreg" layoutX="213.0" layoutY="331.0" mnemonicParsing="false" text="Regular" textFill="WHITE">
+            <RadioButton fx:id="optreg" layoutX="213.0" layoutY="331.0" mnemonicParsing="false" selected="true" text="Regular" textFill="WHITE">
                <toggleGroup>
                   <ToggleGroup fx:id="b" />
                </toggleGroup></RadioButton>

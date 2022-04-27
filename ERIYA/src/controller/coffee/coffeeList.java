@@ -11,9 +11,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -36,7 +39,13 @@ public class coffeeList implements Initializable{
     private Label lblback;
 
 	@FXML
-	 private Button btnaddlist;
+	private Button btnaddlist;
+	
+	 @FXML
+    private TextField txtfnum;
+
+    @FXML
+    private Button btndelete;
 	
     @FXML
     void back(MouseEvent event) {
@@ -47,9 +56,25 @@ public class coffeeList implements Initializable{
     public static Food select; // 선택한 상품 데이터 저장
 	 @FXML
 	 void addlist(ActionEvent event) {
-		 	System.out.println("상품추가 버튼을 눌렀습니다.");
-			Main.instance.loadpage("/view/coffee/coffeeAdd.fxml");
+	 	System.out.println("상품추가 버튼을 눌렀습니다.");
+		Main.instance.loadpage("/view/coffee/coffeeAdd.fxml");
 	 }
+	 
+	@FXML
+	void delete(ActionEvent event) { // 메뉴삭제
+	      int df = Integer.parseInt(txtfnum.getText());
+	      boolean result=FoodDao.foodDao.delete(df);
+	      if(result) {
+	         Alert alert = new Alert(AlertType.INFORMATION);
+	          alert.setHeaderText("제품 삭제 완료");
+	          alert.showAndWait();
+	      }else {
+	         Alert alert = new Alert(AlertType.INFORMATION);
+	          alert.setHeaderText("제품 삭제 실패");
+	          alert.showAndWait();
+	      }
+	      show();
+	   }
 	 
 	 public void show() { // 모든 제품 출력하기
 		 try {
@@ -112,6 +137,8 @@ public class coffeeList implements Initializable{
 		show();
 		if(!Loginpane.isadmin) {
 	         btnaddlist.setVisible(false);
+	         btndelete.setVisible(false);
+	         txtfnum.setVisible(false);
 	      }
 	}
 }
