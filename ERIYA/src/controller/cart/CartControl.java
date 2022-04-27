@@ -9,16 +9,17 @@ import controller.Main;
 import dao.FoodDao;
 import dto.File;
 import dto.Order;
-import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -55,7 +56,13 @@ public class CartControl implements Initializable{
     
     @FXML
     void delete(ActionEvent event) {
-
+    	int select=tableview.getSelectionModel().getSelectedIndex();
+    	System.out.println("장바구니 "+select+"번 삭제");
+    	Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setHeaderText("장바구니에서 삭제 완료");
+		alert.showAndWait();
+    	orderList.remove(select);
+    	cartshow();
     }
 
     @FXML
@@ -81,8 +88,6 @@ public class CartControl implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		System.out.println("장바구니 화면전환 성공");
 		//마지막 주문번호 읽어와서 부여하기
-		
-		
 		int lastOrder; // 마지막 주문
 		try {
 		byte[] bytes = Files.readAllBytes(Paths.get("D:/java/test.txt"));
@@ -91,35 +96,35 @@ public class CartControl implements Initializable{
 			lastOrder=Integer.parseInt(sp2[0]); // 마지막 주문번호 넣기
 		}catch(Exception e) {System.out.println("파일 불러오기 오류 : " + e);}
 		//주문한 목록 전부 불러와서 출력
-		
-		
-		
-			int mNum=controller.login.Login.member.getMnum();
-			ObservableList<CartDataModel> orderData=FXCollections.observableArrayList();
-		for(Order temp : orderList) {
-			String fname=FoodDao.foodDao.fName(temp.getFnum());
-			int price=FoodDao.foodDao.price(temp.getFnum()); // 가격 넣기
-			if(temp.isOpt1()) {price+=500;} // ice면 500원추가
-			if(temp.isOpt2()) {price+=1000;} // extra면 1000원추가
-			if(temp.isEsp()) {price+=500;} // 에스프레소 500원추가
-			if(temp.isChoco()) {price+=500;} // 초콜릿 500원추가
-			if(temp.isSyrup()) {price+=500;} // 시럽 500원추가
-			price*=temp.getQuan(); // 선택한 갯수만큼 곱하기
-			final int fPrice=price;
-			orderData.add(new CartDataModel(fname, temp.getQuan(), fPrice));
-			try {
-			TableColumn tc = tableview.getColumns().get(0);
-			tc.setCellValueFactory(new PropertyValueFactory<>("fname"));
-			
-			tc=tableview.getColumns().get(1);
-			tc.setCellValueFactory(new PropertyValueFactory<>("quan"));
-			
-			tc=tableview.getColumns().get(2);
-			tc.setCellValueFactory(new PropertyValueFactory<>("fprice"));
-			}catch(Exception e) {System.out.println("테이블 세팅 오류 "+e);}
-			 // 테이블뷰에 넣기
-		} // 데이터 입력 끝
-		tableview.setItems(orderData);
+			cartshow();
 		}
-	
+    public void cartshow() {
+
+		int mNum=controller.login.Login.member.getMnum();
+		ObservableList<CartDataModel> orderData=FXCollections.observableArrayList();
+	for(Order temp : orderList) {
+		String fname=FoodDao.foodDao.fName(temp.getFnum());
+		int price=FoodDao.foodDao.price(temp.getFnum()); // 가격 넣기
+		if(temp.isOpt1()) {price+=500;} // ice면 500원추가
+		if(temp.isOpt2()) {price+=1000;} // extra면 1000원추가
+		if(temp.isEsp()) {price+=500;} // 에스프레소 500원추가
+		if(temp.isChoco()) {price+=500;} // 초콜릿 500원추가
+		if(temp.isSyrup()) {price+=500;} // 시럽 500원추가
+		price*=temp.getQuan(); // 선택한 갯수만큼 곱하기
+		final int fPrice=price;
+		orderData.add(new CartDataModel(fname, temp.getQuan(), fPrice));
+		try {
+		TableColumn tc = tableview.getColumns().get(0);
+		tc.setCellValueFactory(new PropertyValueFactory<>("fname"));
+		
+		tc=tableview.getColumns().get(1);
+		tc.setCellValueFactory(new PropertyValueFactory<>("quan"));
+		
+		tc=tableview.getColumns().get(2);
+		tc.setCellValueFactory(new PropertyValueFactory<>("fprice"));
+		}catch(Exception e) {System.out.println("테이블 세팅 오류 "+e);}
+		 // 테이블뷰에 넣기
+	} // 데이터 입력 끝
+	tableview.setItems(orderData);
+	}
 }
